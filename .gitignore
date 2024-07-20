@@ -4,5 +4,8 @@ env/
 venv/
 Thumbs.db
 *.log
+*.csv
+.gitignore
+exportdata-1.py
 
 
