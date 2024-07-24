@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<style>
+.form-style {
+  max-width: 650px; margin: auto; padding-top: 50px;
+}
+</style>
+<title>Upload CSV File to Database </title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <H3 class="text-center mt-;">Import Data to Data Base Tables</H3>
+  <form action="{% url 'importdata' %}" method="POST" enctype="multipart/form-data" class="form-style" required>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="file_name">Upload CSV File </label>
+      <input type="file" class="form-control" name="file_name" required /> 
+    </div>
+    <br/>
+    <div class="form-group">
+      <label for="model_name" class="">Select Data Base Table </label>
+      <select name="model_name" class="form-control" required>
+        <option value="" disabled selected>Select</option>
+        {% for model in custom_models %}
+          <option value="{{model}}">{{model}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <br/>
+    <input type="submit" value="Import Data" class="btn btn-primary">
+    <br>
+    {% include 'alerts.html' %}
+  </form>
+</div>
+
+{% endblock %}

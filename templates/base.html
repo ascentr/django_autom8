@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}{% load bootstrap5 %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap 5.0, from static -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+
+  {% block header %}
+
+  {% endblock %}
+</head>
+
+<body>
+{% block content %}
+
+
+{% endblock %}
+<!-- local BS5 js -->
+  <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
+  <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+

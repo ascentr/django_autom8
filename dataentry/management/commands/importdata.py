@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand, CommandError
-#from dataentry.models import Student
+from django.db import DataError
 from django.apps import apps
 import csv
 
@@ -28,9 +28,17 @@ class Command(BaseCommand):
     if not model:
       raise CommandError(f'Model {model_name} not found in any app')
 
+    # Fetch model fields and corresponding csv headers
+    if model:
+      model_fields = [field.name for field in model._meta.fields if field.name != 'id']
 
     with open(file_path, 'r') as file:
       reader = csv.DictReader(file)
+      csv_headeer = reader.fieldnames
+
+      #compare csv headers with model_fields
+      if csv_headeer != model_fields:
+        raise DataError(f'CSV file does not math the {model_name} model fields')
 
       for row in reader:
         model.objects.create(**row)
