@@ -1,10 +1,12 @@
 *.pyc
 __pycache__/
 env/
+.env
 venv/
 Thumbs.db
 *.log
 *.csv
 exportdata-1.py
+notes.txt
 .gitignore
 

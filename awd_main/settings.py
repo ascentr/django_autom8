@@ -1,8 +1,9 @@
 from pathlib import Path
+from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-c2k=$6@(n4ilk=axl=reu%hm&a8u_37l%==22wawhq(x790($q'
+SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
@@ -85,6 +86,10 @@ USE_TZ = True
 # static files
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR /'static']
+# STATICFILES_DIRS =  [
+#     'awd_main/static',
+# ]
+
 
 # media files configurations 
 MEDIA_URL ='media/'
@@ -98,3 +103,14 @@ MESSAGE_TAGS = {
     messages.ERROR: "danger",
     50: "critical",
 }
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+
+# email Configurations:
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS= True
+EMAIL_PORT= 587
+DEFAULT_FROM_EMAIL = 'Automate with Django <config@soukdaddy.com>'
+DEFAULT_TO_EMAIL = config('TEMP_EMAIL')

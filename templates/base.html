@@ -5,9 +5,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Bootstrap 5.0, from static -->
+  <!-- Bootstrap 5.0, and jQuery from static -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+  <script src="{% static 'jquery/jquery-3.7.1.js' %}"></script>
+  <script src="{% static 'js/custome.js' %}"></script>
 
   {% block header %}
 
@@ -19,7 +21,7 @@
 
 
 {% endblock %}
-<!-- local BS5 js -->
+  <!-- Bootstrap 5.0, rom static -->
   <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.bundle.js' %}"></script>
   <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
