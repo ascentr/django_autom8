@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<style>
+.form-style {
+  max-width: 650px; margin: auto; padding-top: 50px;
+}
+</style>
+<title>Download CSV File from Database Table </title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <H3 class="text-center mt-;">Export Data from Database Tables WTF </H3>
+  <form action="{% url 'exportdata' %}" method="POST" class="form-style" required>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="model_name" class="">Select Data Base Table </label>
+      <select name="model_name" class="form-control" required>
+        <option value="" disabled selected>Select</option>
+        {% for model in custom_models %}
+          <option value="{{model}}">{{model}}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <br/>
+    <input type="submit" value="Export Data" class="btn btn-primary">
+    <br>
+    {% include 'alerts.html' %}
+  </form>
+</div>
+
+{% endblock %}
