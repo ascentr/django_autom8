@@ -7,14 +7,104 @@
 {% block content %}
 
 
-  <div class="container">  
-    <h1>Automating With Django </h1>
-    <a href="{% url 'importdata' %}">
-      <button type="button" class="btn btn-success">Import Data</button>
-    </a>
-    <a href="{% url 'exportdata' %}">
-      <button type="button" class="btn btn-success">Export Data</button>
-    </a>
+
+<div class="container text-center">
+  <h1 class="mt-4">Automating With Django </h1>
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="card alert-primary shadow">
+        <div class="card-header">
+          Import Data
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'importdata' %}">
+            <button type="button" class="btn btn-primary">Import Data</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card alert-success">
+        <div class="card-header">
+          Export Data
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="{% url 'exportdata' %}">
+            <button type="button" class="btn btn-success">Export Data</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card alert-info">
+        <div class="card-header">
+          Bulk Emails 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#">
+            <button type="button" class="btn btn-info">Import Data</button>
+          </a>
+        </div>
+      </div>
+    </div>
+</div>
+<!--SECOND ROW-->
+<br/><br/>
+<div class="row align-items-start">
+  <div class="col">
+    <div class="card alert-warning shadow">
+      <div class="card-header">
+        Email Tracking
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'importdata' %}">
+          <button type="button" class="btn btn-warning">Import Data</button>
+        </a>
+      </div>
+    </div>
   </div>
-  
+  <div class="col">
+    <div class="card alert-secondary ">
+      <div class="card-header">
+        Web Scraping
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'exportdata' %}">
+          <button type="button" class="btn btn-secondary">Export Data</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card alert-dark">
+      <div class="card-header">
+        Compress Images
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#">
+          <button type="button" class="btn btn-dark">Import Data</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+ 
 {% endblock %}

@@ -2,8 +2,9 @@ import time
 from awd_main.celery import app
 from django.core.management import call_command
 from django.conf import settings
-from .utils import send_email_notification
-from .utils import generate_csv_file
+from .utils import send_email_notification , generate_csv_file
+
+
 @app.task
 def celery_test_task():
   time.sleep(5)
