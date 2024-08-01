@@ -16,8 +16,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap5',
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'ckeditor',
     'dataentry',
     'uploads',
+    'emails',
 ]
 
 MIDDLEWARE = [
@@ -83,12 +87,17 @@ USE_I18N = True
 
 USE_TZ = True
 
+#Crispy Forms Templates
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+
 # static files
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR /'static']
-# STATICFILES_DIRS =  [
-#     'awd_main/static',
-# ]
+STATIC_ROOT = BASE_DIR /'static'
+# STATICFILES_DIRS = [BASE_DIR /'static']
+STATICFILES_DIRS =  [
+    'awd_main/static',
+]
 
 
 # media files configurations 
@@ -102,6 +111,14 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
     50: "critical",
+}
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 200,
+        'width': 600,
+    },
 }
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
