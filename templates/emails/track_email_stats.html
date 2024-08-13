@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block header %}
+<title>Email Tracking Dashboard</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container alert-warning mt-5 p-3 shadow rounded">
+
+    <H4 class="text-center">Email Statistics</H4>
+
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+<!--Info card-->
+        <div class="card">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-md-6">
+                Total Sent: <b>{{sent.total_sent}}</b> <br>
+                Sent At : <b>{{email.sent_at}}</b>
+              </div>
+              <div class="col-md-6 text-end">
+                Opened: <b>{{email.open_rate}}%</b> <br>
+                Clicked: <b>{{email.click_rate}}%</b>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4>{{email.subject}}</h4>
+            <div class="mail-body">{{email.body | safe }}
+            {% if email.attachment %}
+              <img src="{{email.attachment.url}}" alt="Email Attachment" >
+            {% else %}
+              No Attachment
+            {% endif %}
+            </div>
+          </div>
+        </div>
+<!--card end-->
+      </div>
+      <div class="text-center">
+        <a href="{% url 'track_dashboard' %}"> Back to email dashboard </a> 
+      </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -29,7 +29,7 @@ def import_data_task(file_path, model_name):
   # Notify user by email  
   mail_subject = "Data Import Status"
   to_email = settings.DEFAULT_TO_EMAIL
-  send_email_notification(mail_subject, message, to_email)
+  send_email_notification(mail_subject, message, [to_email])
   return ('Data Imported Successfully')
 
 
@@ -48,7 +48,7 @@ def export_data_task(model_name):
   #attach csv file to email
   mail_subject = "Data Export Status"
   to_email = settings.DEFAULT_TO_EMAIL
-  send_email_notification(mail_subject, message, to_email, attachment=file_path)
+  send_email_notification(mail_subject, message, [to_email], attachment=file_path)
   return ('Data Exported Successfully')
 
 

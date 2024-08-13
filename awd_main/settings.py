@@ -5,7 +5,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
+# ALLOWED_HOSTS = ['127.0.0.1:8000','https://ngrok.i-free.app','https://8116-84-65-135-165.ngrok-free.app/']
 ALLOWED_HOSTS = ['*']
+
+# used for ngrok
+CSRF_TRUSTED_ORIGINS = ['https://127.0.0.1:8000', 'https://3f2f-84-65-153-44.ngrok-free.app']
+BASE_URL = 'https://3f2f-84-65-153-44.ngrok-free.app'
+# BASE_URL = 'http://127.0.0.1:8000'
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -19,6 +26,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'ckeditor',
+    'anymail',
     'dataentry',
     'uploads',
     'emails',
@@ -121,6 +129,7 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+
 CELERY_BROKER_URL = 'redis://localhost:6379'
 
 # email Configurations:
@@ -131,3 +140,19 @@ EMAIL_USE_TLS= True
 EMAIL_PORT= 587
 DEFAULT_FROM_EMAIL = 'Automate with Django <config@soukdaddy.com>'
 DEFAULT_TO_EMAIL = config('TEMP_EMAIL')
+
+
+
+
+#brevo fka sendinblue
+
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_PORT= 587
+
+# EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
+
+# ANYMAIL = {
+#     "SENDINBLUE_API_KEY": config('SENDINBLUE_API_KEY'),
+# }
+

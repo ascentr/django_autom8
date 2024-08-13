@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block header %}
+<title>Email Tracking Dashboard</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container alert-warning mt-5 p-3 shadow rounded">
+  <H4 class="text-center">Dashboard</H4>
+  <div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Subject</th>
+          <th scope="col">List</th>
+          <th scope="col">Total Sent</th>
+          <th scope="col">Events</th>
+          <th scope="col">Sent At</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for email in emails %}
+        <tr>
+          <td scope="col">{{forloop.counter}}</td>
+          <td scope="col"><a href="{% url 'track_stats' email.pk %}">{{email.subject}}</a></td>
+          <td scope="col">{{email.email_list}}</td>
+          <td scope="col">{{email.total_sent}}</td>
+          <td scope="col">
+            <div>{{email.open_rate}}% opened</div>
+            <div>{{email.click_rate}}% clicked</div></td>
+          <td scope="col">{{email.sent_at}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
