@@ -9,4 +9,6 @@ Thumbs.db
 exportdata-1.py
 notes.txt
 .gitignore
+emails/management
+
 

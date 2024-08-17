@@ -13,6 +13,7 @@ urlpatterns = [
     path('celery-test/', views.celery_test),
     path('dataentery/', include('dataentry.urls')),
     path('emails/', include('emails.urls')),
+    path('image-compression/', include('image_compression.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

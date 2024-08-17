@@ -5,7 +5,7 @@ from dataentry.utils import generate_csv_file
 #propoed command python manage.py exportdata model_name --> file_path_name_stimestamp.csv 
 
 class Command(BaseCommand):
-  help = "Export data from student model to a csv file"
+  help = "Export data from given model to a csv file"
 
   def add_arguments(self, parser):
     parser.add_argument('model_name', type=str, help="Name of the model that holds the data")

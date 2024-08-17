@@ -84,29 +84,12 @@
         Email Tracking
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">Track Sent Email for Click Rate and Open Rate</p>
+        <h5 class="card-title">Track Emails </h5>
+        <p class="card-text">Track Sent Email via Bulk Sending App for Click Rate and Open Rate</p>
       </div>
       <div class="button-wrapper">
         <a href="{% url 'track_dashboard' %}">
           <button type="button" class="btn btn-warning">Track Emails</button>
-        </a>
-      </div>
-    </div>
-  </div>
-<!-- New Info Card -->
-  <div class="col">
-    <div class="card alert-secondary ">
-      <div class="card-header">
-        Web Scraping
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-      <div class="button-wrapper">
-        <a href="{% url 'exportdata' %}">
-          <button type="button" class="btn btn-secondary">Export Data</button>
         </a>
       </div>
     </div>
@@ -118,17 +101,36 @@
         Compress Images
       </div>
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 class="card-title">Reduce Image Size for Storage</h5>
+        <p class="card-text">Upload and select quality, then reduce image size without losing the quality. </p>
       </div>
       <div class="button-wrapper">
-        <a href="#">
-          <button type="button" class="btn btn-dark">Import Data</button>
+        <a href="{% url 'compress' %}">
+          <button type="button" class="btn btn-dark">Compress Images</button>
         </a>
       </div>
     </div>
   </div>
+<!-- New Info Card -->
+  <div class="col">
+    <div class="card alert-secondary ">
+      <div class="card-header">
+        Web Scraping
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Scrape Websites</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="button-wrapper">
+        <a href="{% url 'exportdata' %}">
+          <button type="button" class="btn btn-secondary">Let's Scrape</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
 </div>
+
 <!--row ends-->
 
 </div>
