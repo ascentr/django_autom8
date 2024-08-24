@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block header %}
+{% load crispy_forms_tags %}
+<title>Stock Market Analysis</title>
+<style>
+
+  .select2-container .select2-selection--single{
+    appearance: none;
+    cursor: none;
+    height: 40px !important;
+  }
+/* 
+.custom-select {
+  min-width: 350px;
+  padding: 10px 0;
+}
+
+.custom-select select {
+  width: 100%;
+}
+ */
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container alert-secondary form-style mt-5 p-3 shadow rounded">
+  <H4 class="text-center">Stock Market Analysis</H4>
+  <div>
+    <form action="{% url 'stocks' %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        {{ form|crispy }} 
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Get Stock Info" class="btn btn-success">
+      </div>
+    </form>
+  </div>
+  
+{% include 'alerts.html' %}
+{{form.media}}
+
+</div>
+{% endblock %}
